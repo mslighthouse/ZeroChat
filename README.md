@@ -9,3 +9,10 @@ They'll typically be in `content.json` files.
 For the purposes of the repository, the `content.json` files have been replaced with `content-example.json` files, with appropriate fields scrubbed out.
 If you follow the tutorial, yours will be properly filled out.
 Also, removed `/data/zerochat.db` and replaced with empty `/data/zerochat-example.db`
+
+## Challenges / TODO
+- ~~Display message time~~
+- Move source code to separate .js file
+- Limit displayed messages / add paging
+- Markdown formatting
+- Username mention
