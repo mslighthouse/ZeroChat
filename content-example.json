@@ -1,0 +1,41 @@
+{
+ "address": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+ "address_index": 76280085,
+ "background-color": "#FFF",
+ "clone_root": "template-new",
+ "cloned_from": "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D",
+ "description": "",
+ "files": {
+  "dbschema.json": {
+   "sha512": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+   "size": 1041
+  },
+  "index.html": {
+   "sha512": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+   "size": 5136
+  },
+  "js/ZeroFrame.js": {
+   "sha512": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+   "size": 3370
+  }
+ },
+ "ignore": "data/.*",
+ "includes": {
+  "data/users/content.json": {
+   "current_size": 753,
+   "signers": [],
+   "signers_required": 1
+  }
+ },
+ "inner_path": "content.json",
+ "modified": 1534659754,
+ "postmessage_nonce_security": true,
+ "signers_sign": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+ "signs": {
+  "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+ },
+ "signs_required": 1,
+ "title": "My ZeroChat Test",
+ "translate": ["js/all.js"],
+ "zeronet_version": "0.6.3"
+}
