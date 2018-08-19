@@ -24,16 +24,20 @@
 
   <script>
     class ZeroChat extends ZeroFrame {
-      addMessage(username, message) {
+      addMessage(username, message, timestamp) {
         var message_escaped = message.replace(/</g, "&lt;").replace(/>/g, "&gt;") // Escape html tags in the message
-        this.messages.innerHTML += "<li><b>" + username + "</b>: " + message_escaped + "</li>"
+        var date = new Date()
+        if (timestamp)
+          date = new Date(timestamp)
+
+        this.messages.innerHTML += "<li><font color='grey'>" + date.toISOString() + "</font> <b>" + username + "</b>: " + message_escaped + "</li>"
       }
 
       loadMessages() {
         this.cmd("dbQuery", ["SELECT * FROM message LEFT JOIN json USING (json_id) ORDER BY date_added DESC"], (messages) => {
           document.getElementById("messages").innerHTML = "" // Always start with empty messages
           for (var i = 0; i < messages.length; i++) {
-            this.addMessage(messages[i].cert_user_id, messages[i].body)
+            this.addMessage(messages[i].cert_user_id, messages[i].body, messages[i].date_added)
           }
         })
       }
