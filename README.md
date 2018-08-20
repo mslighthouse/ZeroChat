@@ -3,6 +3,8 @@
 This repository serves as the results of following the [**ZeroChat 'Getting Started'** guide](https://decentralize.today/decentralized-p2p-chat-in-100-lines-of-code-d6e496034cd4), and attempting the other suggestions provided at the end of the article.
 [Read on ZeroNet](http://127.0.0.1:43110/Blog.ZeroNetwork.bit/?Post:99:ZeroChat+tutorial).
 
+If you want to see the blog post ending sample, check it out on the [**master**](https://github.com/mslighthouse/ZeroChat/tree/master) branch.
+
 ## Notes
 If you're going to follow the tutorial, make sure to remove publishing any of your private information!
 They'll typically be in `content.json` files.

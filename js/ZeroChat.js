@@ -6,14 +6,14 @@ class ZeroChat extends ZeroFrame {
         var date = new Date()
         if (timestamp)
           date = new Date(timestamp)
-        this.messages.innerHTML += "<li>" + selected_language + "<font color='grey'> " + date.toISOString() + "</font> <b>" + username + "</b>: " + message_escaped + "</li>"
+        this.messages.innerHTML += "<li><font color='grey'> " + date.toISOString() + "</font> <b>" + username + "</b>: " + message_escaped + "</li>"
       }
   }
 
   loadMessages() {
     this.cmd("dbQuery", ["SELECT * FROM message LEFT JOIN json USING (json_id) ORDER BY date_added DESC"], (messages) => {
       document.getElementById("messages").innerHTML = "" // Always start with empty messages
-      console.log(messages)
+
       for (var i = 0; i < messages.length; i++) {
         var lang = document.getElementById("msg_language").value
         if (!messages[i].language)
