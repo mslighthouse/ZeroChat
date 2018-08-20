@@ -26,10 +26,11 @@
             "cols": [
                 ["body", "TEXT"],
                 ["date_added", "INTEGER"],
+                ["language", "TEXT"],
                 ["json_id", "INTEGER REFERENCES json (json_id)"]
             ],
             "indexes": ["CREATE UNIQUE INDEX message_key ON message(json_id, date_added)"],
-            "schema_changed": 10
+            "schema_changed": 12
         }
     }
 }

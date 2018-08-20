@@ -12,7 +12,8 @@ Also, removed `/data/zerochat.db` and replaced with empty `/data/zerochat-exampl
 
 ## Challenges / TODO
 - ~~Display message time~~
-- Move source code to separate .js file
+- ~~Move source code to separate .js file~~
+- ~~Separate Language channels~~
 - Limit displayed messages / add paging
 - Markdown formatting
 - Username mention
