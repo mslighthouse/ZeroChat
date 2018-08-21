@@ -18,4 +18,4 @@ Also, removed `/data/zerochat.db` and replaced with empty `/data/zerochat-exampl
 - ~~Separate Language channels~~
 - Limit displayed messages / add paging
 - Markdown formatting
-- Username mention
+- ~~Username mention~~

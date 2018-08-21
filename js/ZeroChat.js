@@ -1,12 +1,18 @@
 class ZeroChat extends ZeroFrame {
   addMessage(username, message, timestamp, language) {
+    var user_cur = document.getElementById("select_user").innerHTML
+    user_cur = '@' + username.split('@')[0]
+
+    username = username.split('@')[0] // remove @ and afterwards
     var selected_language = document.getElementById("msg_language").value
       if (language == selected_language) {
         var message_escaped = message.replace(/</g, "&lt;").replace(/>/g, "&gt;") // Escape html tags in the message
+        if (message_escaped.substring(user_cur) != -1)
+          message_escaped = message_escaped.replace(user_cur, "<u>" + user_cur + "</u>")
         var date = new Date()
         if (timestamp)
           date = new Date(timestamp)
-        this.messages.innerHTML += "<li><font color='grey'> " + date.toISOString() + "</font> <b>" + username + "</b>: " + message_escaped + "</li>"
+        this.messages.innerHTML += "<li><font color='grey'>" + date.toISOString() + "</font> <b>" + username + "</b>: " + message_escaped + "</li>"
       }
   }
 
