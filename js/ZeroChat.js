@@ -1,19 +1,22 @@
 class ZeroChat extends ZeroFrame {
   addMessage(username, message, timestamp, language) {
-    var user_cur = document.getElementById("select_user").innerHTML
-    user_cur = '@' + username.split('@')[0]
+    if (this.site_info) {
+      var user_cur = this.site_info.cert_user_id || ""
+      user_cur = username.split('@')[0]
+      username = username.split('@')[0] // remove @ and afterwards
 
-    username = username.split('@')[0] // remove @ and afterwards
-    var selected_language = document.getElementById("msg_language").value
+      var selected_language = document.getElementById("msg_language").value // Only add correct language channel messages
       if (language == selected_language) {
         var message_escaped = message.replace(/</g, "&lt;").replace(/>/g, "&gt;") // Escape html tags in the message
-        if (message_escaped.substring(user_cur) != -1)
+        if (username == user_cur && message_escaped.substring(user_cur) != -1)
           message_escaped = message_escaped.replace(user_cur, "<u>" + user_cur + "</u>")
         var date = new Date()
         if (timestamp)
           date = new Date(timestamp)
         this.messages.innerHTML += "<li><font color='grey'>" + date.toISOString() + "</font> <b>" + username + "</b>: " + message_escaped + "</li>"
       }
+    }
+
   }
 
   loadMessages() {
@@ -84,7 +87,7 @@ class ZeroChat extends ZeroFrame {
           "message": []
         }
 
-        var lan = ""
+      var lan = ""
       if (document.getElementById("msg_language").value == "en")
         lan = "en"
       else
